@@ -1,3 +1,4 @@
+
 /*
 	=========================================================================
 			Java Based Regex Expression Testing App
@@ -142,6 +143,7 @@ Reference Docs:
 
 */
 // import modules
+import sidebar.*;  //package
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -163,6 +165,8 @@ public class RegexTester extends JFrame implements DocumentListener{
 	private Matcher matcher;
 	Highlighter.HighlightPainter painter = new DefaultHighlighter.DefaultHighlightPainter(new Color(165, 94, 234));
 	private Border bd = BorderFactory.createRaisedBevelBorder();
+	public  SideBar sidebar= new SideBar();
+
 
 	// highlight text method
 	private void highlight_text(int start, int end){
@@ -216,10 +220,19 @@ public class RegexTester extends JFrame implements DocumentListener{
 		regex_data.setBackground(new Color(209, 216, 224));
 		regex_data.setForeground(new Color(47, 53, 66));
 		regex_data.setFont(regex_data.getFont().deriveFont(Font.BOLD, 12f));
-		
+
+
+
 		JScrollPane scrollp = new JScrollPane(regex_data);
+
+		/*JPanel panel = new JPanel();
+		panel.setLayout(new BorderLayout());
+		panel.add(sidebar,BorderLayout.WEST);
+		panel.add(regex_data,BorderLayout.CENTER);*/
+		JScrollPane sidebarscroll = new JScrollPane(sidebar);
         
 		add(regex_exp, BorderLayout.NORTH);
+		add(sidebarscroll,BorderLayout.WEST);
 		add(scrollp, BorderLayout.CENTER);
 		regex_exp.getDocument().addDocumentListener(this);
 		regex_data.getDocument().addDocumentListener(this);
@@ -229,11 +242,10 @@ public class RegexTester extends JFrame implements DocumentListener{
 
 	/* Main function Trigger  */
 	public static void main(String[] args){
-		RegexTester obj = new RegexTester(); // initialise object
+		RegexTester obj = new RegexTester(); // initialise object 
 		obj.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		obj.setSize(1200, 600);
 		obj.setTitle("Java Regex Tester By BlareGroup");
 		obj.setVisible(true);
 		obj.setFocusable(true);
-	}
-}
+	}}
