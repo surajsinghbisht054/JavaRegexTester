@@ -185,16 +185,22 @@ public class RegexTester extends JFrame implements DocumentListener{
 		input_exp = regex_exp.getText(); // Pattern
 		output_exp = regex_data.getText(); // Raw Data
 		//System.out.print(output_exp);
-		pattern = Pattern.compile(input_exp); // Pattern Ready
-		matcher = pattern.matcher(output_exp);
-		// Highligting
-		while(true){
+		try{
 
-			if (matcher.find()) {
-				highlight_text(matcher.start(), matcher.end());			
-			}else{
-				break;
+			pattern = Pattern.compile(input_exp); // Pattern Ready
+			matcher = pattern.matcher(output_exp);
+			// Highligting
+			while(true){
+
+				if (matcher.find()) {
+					highlight_text(matcher.start(), matcher.end());			
+				}else{
+					break;
+				}
 			}
+
+		}catch (Exception error){
+			
 		}
 
 	}
