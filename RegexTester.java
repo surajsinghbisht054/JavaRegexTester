@@ -252,5 +252,6 @@ public class RegexTester extends JFrame implements DocumentListener{
 		obj.setSize(1200, 600);
 		obj.setTitle("Java Regex Tester By BlareGroup");
 		obj.setVisible(true);
+		obj.pack();
 		obj.setFocusable(true);
 	}}

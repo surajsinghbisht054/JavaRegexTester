@@ -1,4 +1,16 @@
 package sidebar;
+
+
+/*
+	=========================================================================
+			Java Based Regex Expression Testing App
+	=========================================================================
+
+	Author : 	Suraj Singh Bisht
+				surajsinghbisht054@gmail.com
+				www.bitforestinfo.com
+				www.blaregroup.com
+*/
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
