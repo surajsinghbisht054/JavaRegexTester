@@ -221,19 +221,24 @@ public class RegexTester extends JFrame implements DocumentListener{
 		regex_data.setForeground(new Color(47, 53, 66));
 		regex_data.setFont(regex_data.getFont().deriveFont(Font.BOLD, 12f));
 
-
+		JPanel panel = new JPanel();
+		panel.setLayout(new BorderLayout(15,15));
 
 		JScrollPane scrollp = new JScrollPane(regex_data);
 
-		/*JPanel panel = new JPanel();
-		panel.setLayout(new BorderLayout());
-		panel.add(sidebar,BorderLayout.WEST);
-		panel.add(regex_data,BorderLayout.CENTER);*/
+		
 		JScrollPane sidebarscroll = new JScrollPane(sidebar);
+		sidebarscroll.setSize(100,200);
+
+
+
+		panel.add(regex_exp,BorderLayout.NORTH);
+		panel.add(scrollp,BorderLayout.CENTER);
         
-		add(regex_exp, BorderLayout.NORTH);
+		//add(regex_exp, BorderLayout.NORTH);	
+		//add(scrollp, BorderLayout.CENTER);
+		add(panel,BorderLayout.CENTER);
 		add(sidebarscroll,BorderLayout.WEST);
-		add(scrollp, BorderLayout.CENTER);
 		regex_exp.getDocument().addDocumentListener(this);
 		regex_data.getDocument().addDocumentListener(this);
 		brush = regex_data.getHighlighter();
